@@ -1,6 +1,10 @@
+import MainLogo from '../../../assets/logo-text.png';
+
 const Logo = () => {
   return (
-    <div>Logo</div>
+    <div>
+        <img src={MainLogo} alt="logo" />
+    </div>
   )
 }
 

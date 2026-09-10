@@ -1,11 +1,42 @@
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+/* tailwind css */
 @import "tailwindcss";
+
+/* daisyui */
 @plugin "daisyui";
 
 
-:root{
-    --primary:#D91B7E;
+:root {
+    --primary: #D91B7E;
+    --light:#fff;
+    --font-jakarta: "Plus Jakarta Sans", sans-serif;
+    --font-inter: "Inter", sans-serif;
+
+
+    --text-medium:14px;
+    --text-small:9px;
+
 
 }
-@theme{
-    --color-cPrimary:var(--primary);
+
+@theme {
+    --color-cPrimary: var(--primary);
+    --color-cLight: var(--light);
+
+    /* google font */
+    --font-jakarta: var(--font-jakarta);
+    --font-inter: var(--font-inter);
+
+
+    --text-cMedium: var(--text-medium);
+    --text-cSmall: var(--text-small);
+}
+
+@media (max-width:350px) {
+    .btn{
+        padding: 5px !important;
+        font-size: var(--text-cSmall);
+    }
 }
