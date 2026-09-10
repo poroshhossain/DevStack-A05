@@ -1,13 +1,9 @@
 import Navber from "./Navber/Navber"
 
-interface HeaderProps {
-
-}
-
-const Header = (props: HeaderProps) => {
+const Header = () => {
     return (
         <header>
-            <Navber/>
+            <Navber />
             <div className="">
 
             </div>
