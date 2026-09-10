@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+
+:root{
+    --primary:#D91B7E;
+
+}
+@theme{
+    --color-cPrimary:var(--primary);
+}
