@@ -1,6 +1,8 @@
 import { use, useState } from "react"
 import type { ITechnologyType } from "../type";
 import TechnologiesCard from "../Components/Technologies/TechnologiesCard";
+import AddCartCard from "../Components/Technologies/AddCartCard";
+import { toast } from "react-toastify";
 
 interface TechnologiesProp {
     technologyData: Promise<ITechnologyType[]>
@@ -10,8 +12,20 @@ const Technologies = ({ technologyData }: TechnologiesProp) => {
 
     const [cart, setCart] = useState<ITechnologyType[]>([]);
     const handleAddToStack = (item: ITechnologyType): void => {
+        const alradyExit = cart.some((pdItem) => pdItem.id === item.id);
+        if (alradyExit) {
+            toast.error(`${item.name} alrady exit`)
+            return;
+        }
         const newCart = [...cart, item];
         setCart(newCart)
+    }
+
+
+    const handleRemoveCart = (item: ITechnologyType): void => {
+        const delateItem = cart.filter((pd) => pd.id !== item.id);
+        setCart(delateItem);
+
     }
 
     return (
@@ -26,19 +40,21 @@ const Technologies = ({ technologyData }: TechnologiesProp) => {
                     <div className="md:col-span-9 ">
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                             {
-                                techData.map((item) => <TechnologiesCard key={item.id} techItem={item} handleAddToStack={handleAddToStack} />)
+                                techData.map((item) => <TechnologiesCard key={item.id} cart={cart} techItem={item} handleAddToStack={handleAddToStack} />)
                             }
                         </div>
                     </div>
                     <div className="md:col-span-3">
-                        <div className="font-jakarta p-4 shadow-sm">
+                        <div className="font-jakarta py-6 px-4 shadow-sm">
 
                             {
                                 cart.length ? (
-                                    <div className="">
+                                    <div className="font-jakarta">
+                                        <h2 className="text-cMedium pt-6 pb-4 text-[#94A3B8] font-jakarta capitalize">{cart.length} Technology Selected</h2>
                                         {
-                                            cart.map((data)=> <li>{data.name}</li> )
+                                            cart.map((data) => <AddCartCard key={data.id} handleRemoveCart={handleRemoveCart} data={data} />)
                                         }
+                                        <button onClick={() => setCart([])} className="btn w-full hover:border hover:border-cPrimary hover:text-cPrimary">All Remove</button>
                                     </div>
                                 ) : (
                                     <div className="">

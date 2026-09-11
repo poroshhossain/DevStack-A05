@@ -1,16 +1,24 @@
 import { IoStar } from "react-icons/io5";
 import type { ITechnologyType } from "../../type"
+import { toast } from "react-toastify";
 
 interface TechnologiesCardProps {
     techItem: ITechnologyType;
-    handleAddToStack:(techItem: ITechnologyType)=> void;
+    handleAddToStack: (techItem: ITechnologyType) => void;
+    cart:ITechnologyType[]
 }
 
-const TechnologiesCard = ({ techItem, handleAddToStack }: TechnologiesCardProps) => {
+const TechnologiesCard = ({ techItem, handleAddToStack, cart }: TechnologiesCardProps) => {
     const { name, badge, description, icon, level, rating, category, color } = techItem;
-    console.log(color);
+
+    const handleAddTo = () => {
+        handleAddToStack(techItem)
+        toast.success(`${name} added to Cart`);
+    }
+
+    const isActive = cart.some((item)=> item.id === techItem.id);
     return (
-        <div className="card w-full shadow-sm relative">
+        <div className={`card w-full shadow-sm relative ${isActive?'border border-cPrimary' : ''} `}>
             <div className=" p-3 shrink-0">
                 <img
                     src={icon}
@@ -32,7 +40,7 @@ const TechnologiesCard = ({ techItem, handleAddToStack }: TechnologiesCardProps)
                 </div>
             </div>
 
-            <button onClick={()=> handleAddToStack(techItem)} className="btn m-4 bg-cText text-cLight font-inter">Add to Stack</button>
+            <button onClick={handleAddTo} className="btn m-4 bg-cText text-cLight font-inter">{isActive? 'Added Stack':'Add to Stack'}</button>
         </div>
     )
 }

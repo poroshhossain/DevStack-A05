@@ -4,7 +4,7 @@ Create a beautiful GitHub Readme with the following description:
     DevStack-A05
 
 description:
-    this is a modarn react project 
+    this is a modarn developer technology website with react project 
 
 Technology use:
     --vite
@@ -12,11 +12,15 @@ Technology use:
     --tailwindcss
     --daisyui
     --react-icons
+    --Google Font
+    --react-toastify
 
 3 features:
     1. navigation (logo, main menu, header action(sign in, sign up))
     2. hero section => main title, description , Explore button and learn more, also added hero Image
-    3. 
+    3. technology section using api data fetching and add to cart item
+    4. added feature specific item delate using filter and all item remove also user can will be only on item add in cart using js some method
+    5. added react-toastify
 
 
 
