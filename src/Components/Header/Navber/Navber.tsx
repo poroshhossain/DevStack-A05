@@ -7,14 +7,14 @@ const Navber = () => {
     const [activeClass, setActiveClass] = useState('signup');
 
     const navItem = [
-        { name: 'Home', path: '/home' },
-        { name: 'Technologies', path: '/technologies' },
-        { name: 'Projects', path: '/projects' },
-        { name: 'About', path: '/about' },
-        { name: 'Contact', path: '/contact' },
+        { name: 'Home', path: '/' },
+        { name: 'Technologies', path: '/' },
+        { name: 'Projects', path: '/' },
+        { name: 'About', path: '/' },
+        { name: 'Contact', path: '/' },
     ]
     return (
-        <nav className="shadow-sm ">
+        <nav className="shadow-sm fixed top-0 w-full bg-cLight left-0 z-10 ">
             <div className="max-w-7xl mx-auto lg:px-6 sm:px-8 px-4">
                 <div className="navbar">
                     <div className="navbar-start">
@@ -26,7 +26,7 @@ const Navber = () => {
                                 tabIndex={-1}
                                 className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                                 {
-                                    navItem.map((menu) => <li key={menu.path}><a className="font-jakarta text-cMedium hover:text-cPrimary font-medium" href={menu.path}>{menu.name}</a></li>)
+                                    navItem.map((menu) => <li key={menu.name}><a className="font-jakarta text-cMedium hover:text-cPrimary font-medium" href={menu.path}>{menu.name}</a></li>)
                                 }
                             </ul>
                         </div>
