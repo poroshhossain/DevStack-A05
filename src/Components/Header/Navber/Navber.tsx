@@ -1,7 +1,11 @@
 import { RxHamburgerMenu } from "react-icons/rx"
 import Logo from "./Logo"
+import { useState } from "react"
 
 const Navber = () => {
+
+    const [activeClass, setActiveClass] = useState('signup');
+
     const navItem = [
         { name: 'Home', path: '/home' },
         { name: 'Technologies', path: '/technologies' },
@@ -11,11 +15,11 @@ const Navber = () => {
     ]
     return (
         <nav className="shadow-sm ">
-            <div className="max-w-7xl mx-auto">
-                <div className="navbar bg-base-100">
+            <div className="max-w-7xl mx-auto lg:px-6 sm:px-8 px-4">
+                <div className="navbar">
                     <div className="navbar-start">
                         <div className="dropdown">
-                            <div tabIndex={0} role="button" className="btn md:hidden">
+                            <div tabIndex={0} role="button" className=" text-cMedium md:hidden cursor-pointer p-2">
                                 <RxHamburgerMenu />
                             </div>
                             <ul
@@ -38,8 +42,8 @@ const Navber = () => {
                         </ul>
                     </div>
                     <div className="navbar-end">
-                        <a className="btn bg-transparent border-none rounded-3xl hover:rounded-3xl hover:bg-cPrimary hover:text-cLight sm:text-cMedium">Sign In</a>
-                        <a className=" btn bg-transparent border-none rounded-3xl hover:rounded-3xl hover:bg-cPrimary hover:text-cLight sm:text-cMedium">Sign up</a>
+                        <a onClick={() => setActiveClass('signin')} className={`btn border-none rounded-2xl md:rounded-3xl ${activeClass === 'signin' ? 'bg-cPrimary text-cLight' : ''}  sm:text-cMedium`}>Sign In</a>
+                        <a onClick={() => setActiveClass('signup')} className={`btn border-none rounded-2xl md:rounded-3xl ${activeClass === 'signup' ? 'bg-cPrimary text-cLight' : ''}  sm:text-cMedium`}>Sign up</a>
                     </div>
                 </div>
             </div>

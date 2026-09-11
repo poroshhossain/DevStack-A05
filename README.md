@@ -13,7 +13,10 @@ Technology use:
     --daisyui
     --react-icons
 
-3 features about your project
+3 features:
+    1. navigation (logo, main menu, header action(sign in, sign up))
+    2. hero section => main title, description , Explore button and learn more, also added hero Image
+    3. 
 
 
 
