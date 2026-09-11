@@ -11,6 +11,7 @@
 :root {
     --primary: #D91B7E;
     --secondary: #FF5722;
+    --text: #0F172A;
     --text1: #374151;
     --light:#FFFFFf;
 
@@ -30,6 +31,7 @@
     --color-cPrimary: var(--primary);
     --color-cSecondary: var(--secondary);
     --color-cLight: var(--light);
+    --color-cText: var(--text);
     --color-cText-color: var(--text1);
 
     /* google font */
