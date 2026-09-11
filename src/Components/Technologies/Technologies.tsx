@@ -1,8 +1,5 @@
-interface TechnologiesProps {
-  
-}
 
-const Technologies = (props: TechnologiesProps) => {
+const Technologies = () => {
   return (
     <section>
         <div className="max-w-7xl mx-auto lg:px-8 sm:px-6">
