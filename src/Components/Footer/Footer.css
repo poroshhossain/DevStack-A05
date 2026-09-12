@@ -1,0 +1,22 @@
+.social-item a {
+    font-size: var(--text-xlsmall);
+    font-family: var(--font-jakarta);
+    font-weight: 500;
+    color: var(--text1);
+}
+
+.footer-top .col-span-2 h3 {
+    font-size: var(--text-xlsmall);
+    font-family: var(--font-jakarta);
+    font-weight: 700;
+    color: var(--text1);
+    text-transform:uppercase;
+}
+
+.footer-top .col-span-2 a {
+    font-size: var(--text-xlsmall);
+    font-family: var(--font-jakarta);
+    font-weight: 500;
+    color: var(--text1);
+    opacity: 0.5;
+}

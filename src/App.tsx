@@ -2,6 +2,7 @@ import { Suspense, useState } from "react";
 import Header from "./Components/Header/Header"
 import Technologies from "./Pages/Technologies"
 import type { ITechnologyType } from "./type";
+import Footer from "./Components/Footer/Footer";
 
 
 const getTechnologyApi = async ():Promise<ITechnologyType[]> => {
@@ -17,6 +18,7 @@ const App = () => {
       <Suspense fallback={<p>Lodding...</p>}>
         <Technologies technologyData={technologyData} />
       </Suspense>
+      <Footer/>
     </>
   )
 }

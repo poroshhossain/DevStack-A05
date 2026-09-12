@@ -40,7 +40,7 @@ const TechnologiesCard = ({ techItem, handleAddToStack, cart }: TechnologiesCard
                 </div>
             </div>
 
-            <button onClick={handleAddTo} className="btn m-4 bg-cText text-cLight font-inter">{isActive? 'Added Stack':'Add to Stack'}</button>
+            <button onClick={handleAddTo} className="btn m-4 bg-cText text-cLight font-inter">{isActive? '✓ Added to Stack':'Add to Stack'}</button>
         </div>
     )
 }

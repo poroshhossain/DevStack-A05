@@ -15,7 +15,7 @@ const Navber = () => {
     ]
     return (
         <nav className="shadow-sm fixed top-0 w-full bg-cLight left-0 z-10 ">
-            <div className="max-w-7xl mx-auto lg:px-6 sm:px-8 px-4">
+            <div className="max-w-7xl mx-auto px-4">
                 <div className="navbar">
                     <div className="navbar-start">
                         <div className="dropdown">
@@ -30,20 +30,32 @@ const Navber = () => {
                                 }
                             </ul>
                         </div>
-                        <a href="/" className="cursor-pointer text-center text-xl"><Logo /> </a>
+
+
+                        <div className="hidden md:flex">
+                            <Logo />
+                        </div>
+
                     </div>
 
+
                     {/* desktop menu */}
-                    <div className="navbar-center hidden md:flex">
-                        <ul className="menu menu-horizontal px-1">
+                    <div className="navbar-center">
+                        <ul className="menu menu-horizontal px-1 hidden md:flex">
                             {
-                                navItem.map((menu) => <li key={menu.path}><a className="hover:bg-transparent font-jakarta text-cMedium hover:text-cPrimary font-medium" href={menu.path}>{menu.name}</a></li>)
+                                navItem.map((menu) => <li key={menu.name}><a className="hover:bg-transparent font-jakarta text-cMedium hover:text-cPrimary font-medium" href={menu.path}>{menu.name}</a></li>)
                             }
                         </ul>
+                        <div className="md:hidden flex">
+                            <Logo />
+                        </div>
+
                     </div>
                     <div className="navbar-end">
-                        <a onClick={() => setActiveClass('signin')} className={`btn border-none rounded-2xl md:rounded-3xl ${activeClass === 'signin' ? 'bg-cPrimary text-cLight' : ''}  sm:text-cMedium`}>Sign In</a>
-                        <a onClick={() => setActiveClass('signup')} className={`btn border-none rounded-2xl md:rounded-3xl ${activeClass === 'signup' ? 'bg-cPrimary text-cLight' : ''}  sm:text-cMedium`}>Sign up</a>
+                        <div className="flex items-center header-action">
+                            <a onClick={() => setActiveClass('signin')} className={`btn btn-xs md:btn-md capitalize font-jakarta  border-none rounded-2xl md:rounded-3xl ${activeClass === 'signin' ? 'bg-cPrimary text-cLight' : ''} text-cSmall md:text-cMedium `}>Sign In</a>
+                            <a onClick={() => setActiveClass('signup')} className={`btn btn-xs md:btn-md capitalize font-jakarta border-none rounded-2xl md:rounded-3xl ${activeClass === 'signup' ? 'bg-cPrimary text-cLight' : ''} text-cSmall md:text-cMedium`}>Sign up</a>
+                        </div>
                     </div>
                 </div>
             </div>

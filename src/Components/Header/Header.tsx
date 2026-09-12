@@ -6,8 +6,8 @@ const Header = () => {
     return (
         <header className="bg-cLight ">
             <Navber />
-            <div className="pt-10 md:pt-0 ">
-                <div className="max-w-7xl mx-auto lg:px-6 sm:px-8 px-4">
+            <div className="pt-10 md:pt-0 mt-15 xl:mt-0 ">
+                <div className="max-w-7xl mx-auto px-4">
                     <div className=" grid grid-cols-1 md:grid-cols-2 items-center">
                         {/* hero left */}
                         <div className="hero-left">

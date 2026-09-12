@@ -3,7 +3,7 @@ import type { ITechnologyType } from "../../type"
 
 interface AddCartCardProps {
     data: ITechnologyType;
-    handleRemoveCart:(data: ITechnologyType) => void
+    handleRemoveCart: (data: ITechnologyType) => void
 }
 
 const AddCartCard = ({ data, handleRemoveCart }: AddCartCardProps) => {
@@ -19,8 +19,8 @@ const AddCartCard = ({ data, handleRemoveCart }: AddCartCardProps) => {
                     </div>
                 </div>
             </div>
-            <button className="cursor-pointer btn"
-            onClick={()=> handleRemoveCart(data)}
+            <button className="btn bg-cLight border border-transparent p-2 text-cText-color hover:border-cPrimary hover:text-cPrimary"
+                onClick={() => handleRemoveCart(data)}
             >
                 <MdClose />
             </button>
