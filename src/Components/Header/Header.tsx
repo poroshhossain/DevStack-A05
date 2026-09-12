@@ -12,7 +12,7 @@ const Header = () => {
                         {/* hero left */}
                         <div className="hero-left">
                             <h1 className=" font-inter text-center md:text-left text-3xl sm:text-4xl lg:text-cExtraLarge font-bold leading-none capitalize">Build Your Ideal <br /><span className="bg-linear-to-r from-[#FF5722] via-[#D81B7E] to-[#7C3AED] bg-clip-text text-transparent">Development Stack</span></h1>
-                            <p className=" py-4 font-jakarta lg:mr-20 text-center md:text-left  text-cText-color text-[18px]">Explore frontend, backend, database, and tooling options,
+                            <p className=" py-4 font-jakarta lg:w-5/6 text-center md:text-left  text-cText-color text-[18px]">Explore frontend, backend, database, and tooling options,
                                 compare them side by side, and put together the stack that fits your 
                                 next project.</p>
                             <div className=" mt-6 pt-6 w-full text-center  md:text-left space-x-1">

@@ -70,12 +70,6 @@ const Technologies = ({ technologyData }: TechnologiesProp) => {
                                     </div>
                                 )
                             }
-
-                            {/* <h2 className="font-bold text-[18px]">Your Stack</h2>
-                            <p>No technologies selected yet.</p>
-
-                            <p className="py-6 px-4 text-center border-2 border-dashed border-[#ddd] rounded-2xl m-6 font-jakarta">Your stack is empty.</p> */}
-
                         </div>
                     </div>
                 </div>

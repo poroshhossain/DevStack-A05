@@ -14,12 +14,13 @@ A modern developer technology website built with **React**. This project demonst
 
 * ⚛️ React
 * ⚡ Vite
-* 🟨 JavaScript / TypeScript
-* 🎨 Tailwind CSS
+* 🟨 JavaScript && TypeScript
+* 🎨 Tailwind CSS && CSS
 * 🌼 DaisyUI
 * 🎯 React Icons
 * 🔤 Google Fonts
 * 🔔 React Toastify
+* { } JSON
 
 ---
 
@@ -83,7 +84,7 @@ A modern developer technology website built with **React**. This project demonst
 
 `useState` is a React Hook used to manage changing data inside functional components.
 
-In this project, I used `useState` in components such as the **Technologies section, Main App, Header, and Navbar** to manage component data and user interactions.
+In this project, I used `useState` in components such as the **Technologies section, Main App, Header, and Navbar** etc. to manage component data and user interactions.
 
 ---
 
@@ -114,7 +115,7 @@ For example, I used conditional rendering in the cart section:
 
 ```jsx like
 {cartItems.length ? (
-  <CartItems />
+  <AddCartCard />
 ) : (
   <p>Your cart is empty.</p>
 )}
