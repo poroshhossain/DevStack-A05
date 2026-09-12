@@ -5,20 +5,26 @@ import { toast } from "react-toastify";
 interface TechnologiesCardProps {
     techItem: ITechnologyType;
     handleAddToStack: (techItem: ITechnologyType) => void;
-    cart:ITechnologyType[]
+    cart: ITechnologyType[]
 }
 
 const TechnologiesCard = ({ techItem, handleAddToStack, cart }: TechnologiesCardProps) => {
     const { name, badge, description, icon, level, rating, category, color } = techItem;
 
+    const isActive = cart.some((item) => item.id === techItem.id);
+
     const handleAddTo = () => {
-        handleAddToStack(techItem)
+        handleAddToStack(techItem);
+
+        if (isActive) {
+            return;
+        }
         toast.success(`${name} added to Cart`);
+
     }
 
-    const isActive = cart.some((item)=> item.id === techItem.id);
     return (
-        <div className={`card w-full shadow-sm relative ${isActive?'border border-cPrimary' : ''} `}>
+        <div className={`card w-full shadow-sm relative ${isActive ? 'border border-cPrimary' : ''} `}>
             <div className=" p-3 shrink-0">
                 <img
                     src={icon}
@@ -40,7 +46,7 @@ const TechnologiesCard = ({ techItem, handleAddToStack, cart }: TechnologiesCard
                 </div>
             </div>
 
-            <button onClick={handleAddTo} className="btn m-4 bg-cText text-cLight font-inter">{isActive? '✓ Added to Stack':'Add to Stack'}</button>
+            <button onClick={handleAddTo} className="btn m-4 bg-cText text-cLight font-inter">{isActive ? '✓ Added to Stack' : 'Add to Stack'}</button>
         </div>
     )
 }
